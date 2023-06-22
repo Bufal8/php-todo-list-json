@@ -11,7 +11,7 @@ export default{
   mounted(){
     axios.get('http://localhost:8888/php-todo-list-json/back-end/index.php')
       .then(risultato => {
-        console.log(JSON.stringify(risultato))
+        console.log(risultato)
       })
   }
 };
