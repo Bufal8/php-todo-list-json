@@ -12,4 +12,8 @@ $tasks = [
         'state' => 'todo'
     ],
 ];
+
+echo json_encode($tasks); // Restituisce la stringa del contenuto dell'array sotto forma di json
+
+
 ?>
