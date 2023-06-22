@@ -1,6 +1,11 @@
 <template>
   <div>
-    <h1>Hello World!</h1>
+    <h1>Bo-do List</h1>
+    <ul>
+      <li v-for="(cosaDaFare, index) in coseDaFare" :key="index">
+      {{ cosaDaFare.name }} {{ cosaDaFare.state }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -8,10 +13,15 @@
 import axios from 'axios';
 
 export default{
+  data(){
+    return{
+      coseDaFare: []
+    }
+  },
   mounted(){
-    axios.get('http://localhost:8888/php-todo-list-json/back-end/index.php')
+    axios.get('http://localhost:8888/php-todo-list-json/back-end/')
       .then(risultato => {
-        console.log(risultato)
+        this.coseDaFare = risultato.data;
       })
   }
 };
